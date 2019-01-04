@@ -38,7 +38,6 @@ RUN set -xe; \
         zlib-dev; \
     pip3 install --upgrade pip; \
     pip3 install gif-for-cli; \
-    # export GIF=$(ls urls | python -c 'import sys, random, fileinput; from signal import signal, SIGPIPE, SIG_DFL; signal(SIGPIPE, SIG_DFL); lines=[line for line in fileinput.input()]; random.shuffle(lines); sys.stdout.write("".join(lines)) ' "$@";) \
     curl -SL "https://media.giphy.com/media/dLswRvqOSDfEI/giphy.gif" > /phishme/phish.gif; \
     chown -R phishme:phishme /phishme; \
     gif-for-cli --display-mode truecolor -l 30 /phishme/phish.gif & \
