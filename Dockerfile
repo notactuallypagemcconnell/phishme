@@ -39,8 +39,9 @@ RUN set -xe; \
     pip3 install --upgrade pip; \
     pip3 install gif-for-cli; \
     curl -SL "https://media.giphy.com/media/dLswRvqOSDfEI/giphy.gif" > /phishme/phish.gif; \
-    chown -R phishme:phishme /phishme; \
-    gif-for-cli --display-mode truecolor -l 30 /phishme/phish.gif & \
+    chown -R phishme:phishme /phishme;
+
+RUN gif-for-cli --display-mode truecolor -l 30 /phishme/phish.gif & \
     reset; \
     wait;
 
